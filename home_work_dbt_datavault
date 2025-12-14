@@ -22,6 +22,29 @@ Start containers if are not running:
   docker start <ID devcontainer>
 Check postgres and devcontainer containers are running:
   docker ps
+Check that dbt sees postrges. Enter command line of postgres container:
+  docker exec -it <ID postgres container> /bin/bash
+Install dbt-core and dbt-postgres packages:
+  sudo apt install python3.10-venv
+  cd .venv/bin
+  sudo apt install python3-virtualenv
+  virtualenv .venv
+  source .venv/bin/activate
+  pip install dbt-core dbt-postgres
+If we need only upgrade dbt-core, dbt-postgres:
+  pip install --upgrade dbt-postgres dbt-core
+Clean dependancies:
+  dbt clean
+Disable check of certificates:
+  git config --global http.ssIVerify false
+Install packages from packages.yml:
+  dbt deps
+Check connection between dbt and postgres:
+  dbt debug
+Place data from source:
+  dbt seed
+Run all transformations from sql models:
+  dbt run
 
 
 
