@@ -1,0 +1,29 @@
+Copy fork of project into my own repository:
+git@github.com:DWH-creation/dbt-datavault-postgres-06-09.git
+
+Make new local directory for the project:
+  mkdir dbt_project
+Enter project directory:
+  cd dbt_project
+Git initialisation:
+  git init
+Clone remote repository:
+  git clone git@github.com:DWH-creation/dbt-datavault-postgres-06-09.git
+Check all remote repositories:
+  git remote -v
+Enter directory dbt-datavault-postgres-06-09:
+  cd dbt-datavault-postgres-06-09
+Up container from the project docker-compose.yml:
+  docker compose up
+Check all the containers:
+  docker ps -a
+Start containers if are not running:
+  docker start <ID postgres container>
+  docker start <ID devcontainer>
+Check postgres and devcontainer containers are running:
+  docker ps
+
+
+
+
+
